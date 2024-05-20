@@ -1,6 +1,14 @@
 function displayTemperature(response) {
+  console.log(response.data.temperature.current);
   let temperatureElement = document.querySelector("#current-temperature-value");
+
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+}
+
+function searchCity(city) {
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=d3e48bf033atf207aaaofb4545b2099f&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function search(event) {
@@ -9,10 +17,7 @@ function search(event) {
   let currentCity = document.querySelector("#current-city");
   currentCity.innerHTML = searchInputElement.value;
 
-  let city = searchInputElement.value;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=d3e48bf033atf207aaaofb4545b2099f&units=metric`;
-
-  axios.get(apiUrl).then(displayTemperature);
+  searchCity(searchInputElement.value);
 }
 
 function formatDate(date) {
