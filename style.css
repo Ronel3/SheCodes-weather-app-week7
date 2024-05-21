@@ -71,15 +71,14 @@ main {
   color: darkorchid;
 }
 
-#current-temperature-icon {
-  position: relative;
-  top: -8px;
-  font-size: 40px;
-  margin-right: 10px;
+.current-temperature-icon {
+  height: 88px;
+  width: 88px;
 }
 
 #current-temperature-value {
-  font-size: 80px;
+  font-size: 88px;
+  line-height: 95px;
   font-weight: bold;
 }
 

@@ -11,6 +11,9 @@ function displayTemperature(response) {
 
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.condition.description;
+
+  let icon = document.querySelector("#icon");
+  icon.innerHTML = `<img src=" ${response.data.condition.icon_url}" class="current-temperature-icon">`;
 }
 
 function searchCity(city) {
