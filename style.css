@@ -71,7 +71,7 @@ main {
   color: darkorchid;
 }
 
-.current-temperature-icon {
+#current-temperature-icon {
   position: relative;
   top: -8px;
   font-size: 40px;
